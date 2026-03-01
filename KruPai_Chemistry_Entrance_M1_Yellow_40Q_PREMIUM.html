@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chemistry Entrance M.1 – 40 ข้อ (ธีมเหลือง) | Kru Pai Classroom</title>
+<style>
+:root{
+  --bg:#FFFBEA; --ink:#111827; --card:#FFFFFF;
+  --brand:#FACC15; --accent:#F59E0B;
+  --ok:#16A34A; --bad:#DC2626; --muted:#6B7280;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,sans-serif}
+.container{max-width:980px;margin:0 auto;padding:16px}
+.header-top{
+  background:linear-gradient(90deg,var(--brand),#FFE08A);
+  border-bottom:4px solid rgba(0,0,0,.08);
+  padding:14px 12px;text-align:center;
+  font-weight:1000;letter-spacing:.4px;font-size:22px;
+}
+.subhead{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin:14px 0 6px}
+.title{font-weight:1000;font-size:22px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:2px solid rgba(0,0,0,.08);font-weight:1000}
+.progressWrap{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.bar{height:12px;width:220px;max-width:55vw;background:#fff;border:2px solid rgba(0,0,0,.08);border-radius:999px;overflow:hidden}
+.fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),#FDBA74)}
+.card{background:var(--card);border:2px solid rgba(0,0,0,.08);border-radius:18px;padding:20px;box-shadow:0 10px 26px rgba(0,0,0,.10)}
+.kpSticker{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:16px;background:#FFFBEB;border:2px dashed rgba(245,158,11,.55);font-weight:1000}
+.inputName{width:100%;padding:16px;font-size:20px;border-radius:14px;border:2px solid var(--accent);text-align:center;font-weight:1000;outline:none}
+.inputName:focus{box-shadow:0 0 0 6px rgba(245,158,11,.20)}
+.question{font-weight:1000;font-size:22px;line-height:1.45;margin:6px 0 14px}
+.choices{display:grid;gap:10px}
+.choice{position:relative;width:100%;text-align:left;border:2px solid rgba(0,0,0,.10);border-radius:16px;padding:14px;background:#fff;font-weight:900;font-size:18px;cursor:pointer;transition:transform .08s ease, box-shadow .08s ease, border-color .12s ease}
+.choice:hover{border-color:rgba(245,158,11,.70);box-shadow:0 8px 18px rgba(245,158,11,.10);transform:translateY(-1px)}
+.choice:disabled{cursor:not-allowed;opacity:.95}
+.choice.correct{border-color:var(--ok);background:#ECFDF5}
+.choice.wrong{border-color:var(--bad);background:#FEF2F2}
+.pill{position:absolute;right:10px;top:10px;padding:6px 10px;border-radius:999px;font-weight:1000;font-size:14px;border:2px solid rgba(0,0,0,.10);background:#fff}
+.pill.ok{border-color:rgba(22,163,74,.35)}
+.pill.bad{border-color:rgba(220,38,38,.35)}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.btn{padding:12px 16px;border:none;border-radius:999px;font-weight:1000;font-size:18px;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.secondary{background:#E5E7EB;color:#111827}
+.btn.ghost{background:#fff;border:2px solid rgba(0,0,0,.10)}
+.footer{text-align:center;color:var(--muted);margin:16px 0 6px;font-size:13px}
+.big-emoji{position:fixed;top:42%;left:50%;transform:translate(-50%,-50%) scale(.25);font-size:5.2rem;z-index:9999;pointer-events:none;animation:bigPop .9s ease-out forwards;filter:drop-shadow(0 12px 18px rgba(0,0,0,.18))}
+@keyframes bigPop{0%{opacity:0;transform:translate(-50%,-50%) scale(.25)}45%{opacity:1;transform:translate(-50%,-50%) scale(1.25)}100%{opacity:0;transform:translate(-50%,-60%) scale(1)}}
+table{width:100%;border-collapse:collapse;margin-top:12px;overflow:hidden;border-radius:14px}
+th,td{border:1px solid rgba(0,0,0,.08);padding:10px;text-align:center;font-weight:900}
+th{background:#FEF3C7}
+.note{color:var(--muted);font-size:14px;font-weight:800}
+</style>
+</head>
+<body>
+  <div class="header-top">🧪 Kru Pai Classroom • Chemistry Entrance M.1 • <span style="color:#7C2D12">40 ข้อ</span> 💛</div>
+
+  <div class="container">
+    <div class="subhead">
+      <div class="title">โหมด: เคมี (คิดวิเคราะห์)</div>
+      <div class="progressWrap">
+        <div class="badge" id="playerBadge">👤 ผู้เล่น: -</div>
+        <div class="badge">⭐ คะแนน: <span id="scoreMini">0</span></div>
+        <div class="bar"><div class="fill" id="fill"></div></div>
+        <div class="badge" id="progressText">ข้อ 1/40</div>
+      </div>
+    </div>
+
+    <div id="login" class="card">
+      <div class="kpSticker">✨ พร้อมสอบเข้า ม.1 แล้ว! • พิมพ์ชื่อก่อนเริ่มนะจ๊ะ</div>
+      <div style="height:12px"></div>
+      <input id="playerNameInput" class="inputName" type="text" placeholder="พิมพ์ชื่อเล่นของหนู (เช่น น้องมีนา)"/>
+      <div style="height:14px"></div>
+      <button class="btn primary" style="width:100%" onclick="startGame()">▶️ เริ่มทำข้อสอบ</button>
+      <div style="height:10px"></div>
+      <div class="note">* ระบบจะจำประวัติ “ของชื่อนี้” ในเครื่องนี้อัตโนมัติ</div>
+    </div>
+
+    <div id="game" class="card" style="display:none">
+      <div class="question" id="question"></div>
+      <div class="choices" id="choices"></div>
+      <div class="controls">
+        <button class="btn secondary" onclick="skip()">ข้าม (ไม่เพิ่มคะแนน)</button>
+        <button class="btn ghost" onclick="finish()">สรุปคะแนน</button>
+      </div>
+      <div class="note" style="margin-top:10px">ตอบแล้วจะขึ้นสัญลักษณ์ ✅/❌ และไปข้อต่อไปอัตโนมัติ</div>
+    </div>
+
+    <div id="result" class="card" style="display:none">
+      <div class="kpSticker" id="playerShow">🏅 ผู้เล่น:</div>
+      <div style="height:10px"></div>
+      <div style="font-size:30px;font-weight:1000;color:#92400E" id="scoreBig"></div>
+      <div style="font-size:22px;font-weight:1000;margin-top:8px" id="praise"></div>
+      <div class="note" id="pctText" style="margin-top:6px"></div>
+
+      <h3 style="margin-top:18px">📚 ประวัติการเล่น (ชื่อนี้)</h3>
+      <table>
+        <thead><tr><th>รอบ</th><th>คะแนน</th><th>%</th><th>เวลา</th></tr></thead>
+        <tbody id="historyTable"></tbody>
+      </table>
+
+      <div class="controls" style="margin-top:14px">
+        <button class="btn primary" onclick="restart()">เล่นใหม่</button>
+        <button class="btn secondary" onclick="clearHistory()">ล้างประวัติชื่อนี้</button>
+      </div>
+    </div>
+
+    <div class="footer">© Kru Pai Classroom • Chemistry Entrance • Theme Yellow • v2</div>
+  </div>
+
+<script>
+const DATA = [{"q": "กรด + เบส โดยทั่วไปจะได้ผลิตภัณฑ์ใด", "o": ["เกลือและน้ำ", "แก๊สออกซิเจนและน้ำ", "โลหะและน้ำ", "กรดใหม่"], "a": 0}, {"q": "กรดทำปฏิกิริยากับโลหะที่ว่องไว จะเกิดสิ่งใดเด่นชัดที่สุด", "o": ["แก๊สไฮโดรเจน", "แก๊สคาร์บอนไดออกไซด์", "ตะกอนสีขาว", "กลิ่นฉุนคลอรีน"], "a": 0}, {"q": "ข้อใด “มักไม่เกิดปฏิกิริยา” กับกรดไฮโดรคลอริกเจือจาง (HCl)", "o": ["แมกนีเซียม", "สังกะสี", "เหล็ก", "ทองคำ"], "a": 3}, {"q": "หากหยดกรดลงบนโลหะแล้วเกิดฟองแก๊ส แสดงว่าเกิดแก๊สชนิดใด", "o": ["N₂", "H₂", "O₂", "CO₂"], "a": 1}, {"q": "กรด + คาร์บอเนต (เช่น หินปูน) จะให้แก๊สใด", "o": ["CO₂", "H₂", "O₂", "NH₃"], "a": 0}, {"q": "ถ้าเติมกรดลงในสารละลายเบสทีละน้อยจน “เป็นกลาง” จะมีค่า pH เท่าไร", "o": ["2", "5", "7", "12"], "a": 2}, {"q": "ข้อใดเป็นตัวอย่างปฏิกิริยาการเกิดสนิม (โดยจัดเป็นประเภทใด)", "o": ["การสลายตัว", "การรวมตัว/ออกซิเดชัน", "การแทนที่คู่", "การเป็นกลาง"], "a": 1}, {"q": "ข้อความใดถูกต้องเกี่ยวกับ “การเกิดปฏิกิริยาเคมี”", "o": ["เกิดสารใหม่เสมอ", "ไม่มีพลังงานเกี่ยวข้อง", "มองเห็นได้เสมอ", "แยกกลับได้ด้วยการกรอง"], "a": 0}, {"q": "ข้อใดเป็นคุณสมบัติเด่นของกรด", "o": ["ลื่นมือ", "ทำให้ลิตมัสแดง", "ทำให้ลิตมัสน้ำเงิน", "มีค่า pH > 7"], "a": 1}, {"q": "ข้อใดเป็นคุณสมบัติเด่นของเบส", "o": ["มีรสเปรี้ยว", "ลื่นมือ", "ทำให้ลิตมัสแดง", "มีค่า pH < 7"], "a": 1}, {"q": "สารใดเป็น “กรดทั้งหมด”", "o": ["น้ำสบู่ น้ำปูนใส น้ำเกลือ", "น้ำส้ม น้ำมะนาว น้ำอัดลม", "นม น้ำเกลือ น้ำกลั่น", "ผงซักฟอก สบู่ น้ำปูนใส"], "a": 1}, {"q": "สารใดเป็น “เบสทั้งหมด”", "o": ["สบู่ น้ำปูนใส ผงซักฟอก", "น้ำมะนาว น้ำส้ม น้ำอัดลม", "น้ำเกลือ น้ำกลั่น", "นม น้ำส้ม น้ำฝน"], "a": 0}, {"q": "สารละลายที่มี pH = 2 จัดเป็นอะไร", "o": ["กรดแก่", "กรดอ่อน", "เบสอ่อน", "เป็นกลาง"], "a": 0}, {"q": "สารที่มี pH = 10 จัดเป็นอะไร", "o": ["กรดแก่", "กรดอ่อน", "เบส", "เป็นกลาง"], "a": 2}, {"q": "ลิตมัส “สีน้ำเงิน” เมื่อลงในกรดจะเปลี่ยนเป็นสีใด", "o": ["น้ำเงินเหมือนเดิม", "แดง", "เขียว", "เหลือง"], "a": 1}, {"q": "เมทิลออเรนจ์ (methyl orange) ในสารละลายเบสโดยมากจะมีสีใด", "o": ["แดง", "ส้ม", "เหลือง", "ม่วง"], "a": 2}, {"q": "เลขอะตอม (Atomic number) หมายถึงจำนวนใด", "o": ["โปรตอน", "นิวตรอน", "โปรตอน+นิวตรอน", "อิเล็กตรอน+นิวตรอน"], "a": 0}, {"q": "เลขมวล (Mass number) เท่ากับผลรวมของ", "o": ["โปรตอน+อิเล็กตรอน", "นิวตรอน+อิเล็กตรอน", "โปรตอน+นิวตรอน", "โปรตอน+นิวตรอน+อิเล็กตรอน"], "a": 2}, {"q": "ธาตุหนึ่งมีเลขอะตอม 13 ข้อใดถูกต้องที่สุด", "o": ["มีโปรตอน 13 ตัว", "มีอิเล็กตรอน 13 ตัว (อะตอมเป็นกลาง)", "รู้ได้ว่าเป็นโลหะเสมอ", "ถูกทั้ง ก และ ข"], "a": 3}, {"q": "อะตอมมีเลขมวล 23 และเลขอะตอม 11 จะมีนิวตรอนกี่ตัว", "o": ["11", "12", "23", "34"], "a": 1}, {"q": "ข้อใดกล่าวถูกต้องเกี่ยวกับอิเล็กตรอน", "o": ["มีประจุบวก", "มีประจุลบ", "ไม่มีประจุ", "อยู่ในนิวเคลียส"], "a": 1}, {"q": "อนุภาคมูลฐานของอะตอมมีอะไรบ้าง", "o": ["อะตอม ไอออน โมเลกุล", "โปรตอน นิวตรอน อิเล็กตรอน", "โปรตอน โมเลกุล อิเล็กตรอน", "นิวตรอน สารประกอบ อิเล็กตรอน"], "a": 1}, {"q": "นิวตรอนมีสมบัติสำคัญข้อใด", "o": ["ประจุบวก", "ประจุลบ", "ไม่มีประจุ", "ทำให้ pH เปลี่ยน"], "a": 2}, {"q": "ข้อใดเป็น “โลหะทั้งหมด”", "o": ["เหล็ก ทองแดง โซเดียม", "ออกซิเจน กำมะถัน คาร์บอน", "คลอรีน ไอโอดีน โบรมีน", "ฮีเลียม นีออน อาร์กอน"], "a": 0}, {"q": "ข้อใดเป็น “อโลหะทั้งหมด”", "o": ["แมกนีเซียม อะลูมิเนียม", "ออกซิเจน กำมะถัน คาร์บอน", "โซเดียม แคลเซียม", "เหล็ก ทองแดง"], "a": 1}, {"q": "กึ่งโลหะ (metalloid) มีสมบัติอย่างไร", "o": ["เป็นโลหะทั้งหมด", "เป็นอโลหะทั้งหมด", "มีสมบัติทั้งโลหะและอโลหะ", "ไม่นำไฟฟ้าเลย"], "a": 2}, {"q": "สมบัติของโลหะโดยทั่วไปคือข้อใด", "o": ["เปราะ แตกง่าย", "นำไฟฟ้าได้ดี", "ไม่เป็นมันเงา", "ไม่นำความร้อน"], "a": 1}, {"q": "สมบัติของอโลหะโดยทั่วไปคือข้อใด", "o": ["นำไฟฟ้าได้ดีเสมอ", "มักเปราะและไม่นำไฟฟ้า (ยกเว้นบางชนิด)", "เป็นมันวาวเสมอ", "ยืดเป็นเส้นลวดได้ดี"], "a": 1}, {"q": "ข้อใดเป็น “สารบริสุทธิ์ทั้งหมด”", "o": ["น้ำเกลือ อากาศ", "น้ำกลั่น ทองคำ", "นม น้ำคลอง", "ควัน น้ำโคลน"], "a": 1}, {"q": "ข้อใดเป็น “สารผสมทั้งหมด”", "o": ["น้ำกลั่น ทองคำ", "น้ำเกลือ อากาศ นม", "เหล็ก ออกซิเจน", "โซเดียม คลอรีน"], "a": 1}, {"q": "สารบริสุทธิ์มักมีลักษณะใด", "o": ["ไม่มีจุดเดือดคงที่", "มีจุดเดือด/จุดหลอมเหลวคงที่ (ภายใต้เงื่อนไขเดียวกัน)", "แยกได้ด้วยการกรองเสมอ", "ประกอบด้วยสารหลายชนิด"], "a": 1}, {"q": "น้ำเกลือจัดเป็นอะไร", "o": ["สารบริสุทธิ์", "สารละลาย (สารผสมเนื้อเดียว)", "คอลลอยด์", "สารแขวนลอย"], "a": 1}, {"q": "ข้อใดเหมาะกับการแยก “เกลือออกจากน้ำทะเล” มากที่สุด", "o": ["การกรอง", "การระเหย/ตกผลึก", "ใช้แม่เหล็ก", "การรินออก"], "a": 1}, {"q": "ข้อใดคือ “คอลลอยด์ทั้งหมด”", "o": ["น้ำเกลือ น้ำตาลละลาย", "นม หมอก ควันไฟ", "น้ำกลั่น", "ทรายผสมน้ำ"], "a": 1}, {"q": "คอลลอยด์มีขนาดอนุภาคเมื่อเทียบกับสารละลายและสารแขวนลอยเป็นอย่างไร", "o": ["เล็กกว่าสารละลาย", "ใหญ่กว่าสารแขวนลอย", "ใหญ่กว่าสารละลายแต่เล็กกว่าสารแขวนลอย", "เท่ากันทั้งหมด"], "a": 2}, {"q": "ข้อใด “ไม่ใช่คอลลอยด์”", "o": ["นม", "หมอก", "น้ำเกลือ", "ควัน"], "a": 2}, {"q": "สารแขวนลอยมีลักษณะเด่นข้อใด", "o": ["ใสและไม่ตกตะกอน", "อนุภาคเล็กมากจนมองไม่เห็น", "ตกตะกอนเมื่อทิ้งไว้", "มีสูตรเคมีแน่นอน"], "a": 2}, {"q": "เรียงขนาดอนุภาคจากเล็กไปใหญ่ได้ถูกต้อง", "o": ["สารแขวนลอย→คอลลอยด์→สารละลาย", "สารละลาย→คอลลอยด์→สารแขวนลอย", "คอลลอยด์→สารละลาย→สารแขวนลอย", "สารละลาย→สารแขวนลอย→คอลลอยด์"], "a": 1}, {"q": "ข้อใดเป็น “คอลลอยด์ทั้งหมด” (เลือกกลุ่มที่ถูก)", "o": ["นม, น้ำเกลือ, น้ำกลั่น", "ควัน, หมอก, นม", "ทรายผสมน้ำ, น้ำโคลน, น้ำเกลือ", "น้ำกลั่น, อากาศ, ทองคำ"], "a": 1}, {"q": "ข้อใดเป็น “สารบริสุทธิ์ทั้งหมด” (เลือกกลุ่มที่ถูก)", "o": ["น้ำกลั่น, ทองคำ, ออกซิเจน", "น้ำเกลือ, อากาศ, นม", "ควัน, หมอก, นม", "น้ำโคลน, น้ำคลอง, อากาศ"], "a": 0}];
+
+let idx = 0;
+let score = 0;
+let playerName = "";
+let locked = false;
+
+function keyForName(name){
+  const safe = name.trim().toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_\u0E00-\u0E7F]/g,'');
+  return "kp_chem_history_" + safe;
+}
+
+function showBigEmoji(ok){
+  const e = document.createElement('div');
+  e.className = 'big-emoji';
+  e.textContent = ok ? "✅🎉" : "❌😅";
+  document.body.appendChild(e);
+  setTimeout(()=>e.remove(), 950);
+}
+
+function updateTop(){
+  document.getElementById('scoreMini').textContent = String(score);
+  document.getElementById('progressText').textContent = "ข้อ " + String(idx+1) + "/" + String(DATA.length);
+  const pct = Math.round((idx)/DATA.length*100);
+  document.getElementById('fill').style.width = String(pct) + "%";
+}
+
+function startGame(){
+  const name = (document.getElementById('playerNameInput').value || "").trim();
+  if(!name){ alert("กรุณาพิมพ์ชื่อก่อนเล่นนะจ๊ะ 😊"); return; }
+  playerName = name;
+  document.getElementById('playerBadge').textContent = "👤 ผู้เล่น: " + playerName;
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('game').style.display = 'block';
+  idx = 0; score = 0; locked = false;
+  updateTop();
+  render();
+}
+
+function render(){
+  locked = false;
+  updateTop();
+  const item = DATA[idx];
+  document.getElementById('question').textContent = item.q;
+
+  const wrap = document.getElementById('choices');
+  wrap.innerHTML = "";
+  for(let i=0;i<item.o.length;i++){
+    const txt = item.o[i];
+    const b = document.createElement('button');
+    b.className = 'choice';
+    b.type = 'button';
+    b.textContent = txt;
+    b.onclick = function(){ select(i,b); };
+    wrap.appendChild(b);
+  }
+}
+
+function select(i,btn){
+  if(locked) return;
+  locked = true;
+
+  const item = DATA[idx];
+  const ok = (i === item.a);
+  const all = Array.from(document.querySelectorAll('.choice'));
+  all.forEach(x=>x.disabled = true);
+
+  if(ok){
+    score++;
+    btn.classList.add('correct');
+    const pill = document.createElement('span');
+    pill.className = 'pill ok';
+    pill.textContent = "✅ ถูก!";
+    btn.appendChild(pill);
+  } else {
+    btn.classList.add('wrong');
+    const pill = document.createElement('span');
+    pill.className = 'pill bad';
+    pill.textContent = "❌ ผิด";
+    btn.appendChild(pill);
+
+    const correctBtn = all[item.a];
+    if(correctBtn){
+      correctBtn.classList.add('correct');
+      const cp = document.createElement('span');
+      cp.className = 'pill ok';
+      cp.textContent = "✅ เฉลย";
+      correctBtn.appendChild(cp);
+    }
+  }
+
+  document.getElementById('scoreMini').textContent = String(score);
+  showBigEmoji(ok);
+
+  setTimeout(function(){
+    if(idx < DATA.length-1){ idx++; render(); }
+    else { finish(); }
+  }, 850);
+}
+
+function skip(){
+  if(locked) return;
+  locked = true;
+  showBigEmoji(false);
+  setTimeout(function(){
+    if(idx < DATA.length-1){ idx++; render(); }
+    else { finish(); }
+  }, 450);
+}
+
+function praiseFor(pct){
+  if(pct >= 90) return "🌟 สุดยอดมาก! ระดับสอบเข้าแน่นมาก";
+  if(pct >= 75) return "💛 เก่งมาก! อีกนิดเดียวถึงขั้นสุดยอด";
+  if(pct >= 60) return "✨ เกือบผ่านแล้ว! ทบทวนอีกหน่อยจะพุ่งเลย";
+  return "😊 สู้ๆ นะจ๊ะ ลองใหม่อีกครั้ง เดี๋ยวเก่งขึ้นแน่นอน";
+}
+
+function finish(){
+  const pct = Math.round(score*100/DATA.length);
+  document.getElementById('game').style.display = 'none';
+  document.getElementById('result').style.display = 'block';
+
+  document.getElementById('playerShow').textContent = "🏅 ผู้เล่น: " + playerName;
+  document.getElementById('scoreBig').textContent = "คะแนน " + String(score) + "/" + String(DATA.length);
+  document.getElementById('praise').textContent = praiseFor(pct);
+  document.getElementById('pctText').textContent = "คิดเป็น " + String(pct) + "%";
+
+  const k = keyForName(playerName);
+  const arr = JSON.parse(localStorage.getItem(k) || "[]");
+  arr.push({score: score, pct: pct, time: new Date().toLocaleString()});
+  localStorage.setItem(k, JSON.stringify(arr.slice(-20)));
+  renderHistory();
+}
+
+function renderHistory(){
+  const k = keyForName(playerName);
+  const arr = JSON.parse(localStorage.getItem(k) || "[]");
+  const tb = document.getElementById('historyTable');
+  tb.innerHTML = "";
+  for(let i=0;i<arr.length;i++){
+    const h = arr[i];
+    const tr = document.createElement('tr');
+    tr.innerHTML = "<td>"+String(i+1)+"</td><td>"+String(h.score)+"/"+String(DATA.length)+"</td><td>"+String(h.pct)+"%</td><td>"+h.time+"</td>";
+    tb.appendChild(tr);
+  }
+}
+
+function restart(){
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('login').style.display = 'block';
+  document.getElementById('playerNameInput').value = playerName;
+  document.getElementById('playerBadge').textContent = "👤 ผู้เล่น: -";
+  document.getElementById('fill').style.width = "0%";
+  document.getElementById('progressText').textContent = "ข้อ 1/40";
+  document.getElementById('scoreMini').textContent = "0";
+}
+
+function clearHistory(){
+  const k = keyForName(playerName);
+  localStorage.removeItem(k);
+  renderHistory();
+  alert("ล้างประวัติชื่อนี้แล้ว ✅");
+}
+</script>
+</body>
+</html>
